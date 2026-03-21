@@ -1,0 +1,17 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#2563eb" fill="none">
+    <path 
+      d="M20 30C40 30 50 70 70 70" 
+      stroke-width="12" 
+      stroke-linecap="round" 
+      opacity="0.8" 
+    />
+    <path 
+      d="M20 70C40 70 50 30 70 30" 
+      stroke-width="12" 
+      stroke-linecap="round" 
+    />
+    
+    <circle cx="45" cy="50" r="8" fill="#2563eb" />
+  </g>
+</svg>
