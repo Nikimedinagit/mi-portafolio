@@ -132,8 +132,8 @@ const Projects = () => {
       subtitle: language === "es" ? "Marca Personal" : "Personal Brand",
       description: language === "es" ? "Mi carta de presentación: performance y diseño." : "My presentation card: performance and design.",
       stack: ["React", "Shadcn/UI", "Tailwind CSS"],
-      github: "#",
-      link: "#",
+      github: "https://github.com/Nikimedinagit/mi-portafolio",
+      link: "https://ignaciodev.netlify.app/",
     },
   ];
 
