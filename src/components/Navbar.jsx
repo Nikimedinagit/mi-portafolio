@@ -1,6 +1,6 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { Sun, Moon, Menu, X, Languages } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
 
@@ -19,17 +19,22 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["inicio", "sobre", "proyectos", "skills", "contacto"];
-      const current = sections.find((section) => {
+      const sections = ["inicio", "sobre", "proyectos", "experiencia", "skills", "contacto"];
+      let current = sections[0];
+      const activationOffset = 120;
+
+      sections.forEach((section) => {
         const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top >= -200 && rect.top <= 300;
-        }
-        return false;
+        if (element && element.getBoundingClientRect().top <= activationOffset) current = section;
       });
-      if (current) setActiveSection(current);
+
+      const reachedPageEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      if (reachedPageEnd) current = sections.at(-1);
+
+      setActiveSection(current);
     };
+
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -39,6 +44,7 @@ const Navbar = () => {
       inicio: "Inicio",
       sobre: "Sobre Mí",
       proyectos: "Proyectos",
+      experiencia: "Experiencia",
       skills: "Habilidades",
       contacto: "Contacto",
     },
@@ -46,28 +52,37 @@ const Navbar = () => {
       inicio: "Home",
       sobre: "About Me",
       proyectos: "Projects",
+      experiencia: "Experience",
       skills: "Skills",
       contacto: "Contact",
     },
   };
 
   const t = text[language];
+  const isGraySection = ["inicio", "proyectos", "skills"].includes(activeSection);
 
   return (
-    <nav className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-xl z-[100]">
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-12 md:px-16 lg:px-24 h-16 flex items-center justify-between">
+    <nav
+      className={`fixed top-0 z-[100] w-full border-b backdrop-blur-xl transition-colors duration-300 ${
+        isGraySection
+          ? "border-slate-200/80 bg-white/90 dark:border-white/10 dark:bg-slate-900/90"
+          : "border-slate-200/80 bg-slate-100/90 dark:border-white/10 dark:bg-slate-950/90"
+      }`}
+    >
+      <div className="mx-auto flex h-14 max-w-[1500px] items-center justify-between px-5 sm:px-8 md:px-10 lg:px-8">
         
         <div className="flex-shrink-0 transition-transform active:scale-95">
           <a href="#inicio" onClick={() => setIsOpen(false)}>
-            <Logo className="h-10 sm:h-12 md:h-14 w-auto" />
+            <Logo className="h-8 sm:h-9 w-auto" />
           </a>
         </div>
 
-        <ul className="hidden lg:flex items-center gap-10 xl:gap-14">
+        <ul className="hidden lg:flex items-center gap-5 xl:gap-7">
           {Object.entries(t).map(([key, value]) => (
             <li key={key}>
               <a
                 href={`#${key}`}
+                onClick={() => setActiveSection(key)}
                 className={`text-base font-bold tracking-tight transition-all relative group ${
                   activeSection === key
                     ? "text-blue-600"
@@ -85,32 +100,32 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3 md:gap-4">
+        <div className="flex items-center gap-1">
           <Button
             variant="ghost"
             size="sm"
-            className="flex items-center gap-2 px-4 font-bold text-base hover:bg-blue-600/10 text-blue-600 transition-all rounded-md"
+            className="h-9 min-w-9 rounded-md px-2.5 text-xs font-black tracking-[0.12em] text-blue-600 transition-colors hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-blue-950/40"
             onClick={toggleLanguage}
+            aria-label={language === "es" ? "Cambiar idioma a inglés" : "Change language to Spanish"}
+            title={language === "es" ? "Cambiar a inglés" : "Cambiar a español"}
           >
-            <Languages className="h-5 w-5 opacity-70" />
-            <span className="hidden sm:inline">
-              {language === "es" ? "Español" :  "English"}
-            </span>
-            <span className="sm:hidden">
-              {language === "es" ? "ES" : "EN"}
-            </span>
+            {language === "es" ? "ES" : "EN"}
           </Button>
 
+          <span className="mx-1 hidden h-5 w-px bg-border sm:block" aria-hidden="true" />
+
           <Button
-            variant="outline"
+            variant="ghost"
             size="icon"
-            className="rounded-md h-10 w-10 border-muted-foreground/20 hover:border-blue-600/50 transition-all shadow-sm"
+            className="h-9 w-9 rounded-md text-blue-600 transition-colors hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-blue-950/40"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            aria-label={theme === "light" ? "Activar tema oscuro" : "Activar tema claro"}
+            title={theme === "light" ? "Tema oscuro" : "Tema claro"}
           >
             {theme === "light" ? (
-              <Moon className="h-[18px] w-[18px] text-blue-600" />
+              <Moon className="h-[18px] w-[18px]" />
             ) : (
-              <Sun className="h-[18px] w-[18px] text-yellow-500" />
+              <Sun className="h-[18px] w-[18px]" />
             )}
           </Button>
 
@@ -126,7 +141,9 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`lg:hidden absolute w-full bg-background border-b transition-all duration-500 ease-in-out ${
+        className={`lg:hidden absolute w-full border-b backdrop-blur-xl transition-all duration-500 ease-in-out ${
+          isGraySection ? "bg-white/95 dark:bg-slate-900/95" : "bg-slate-100/95 dark:bg-slate-950/95"
+        } ${
           isOpen
             ? "max-h-[500px] opacity-100 visible"
             : "max-h-0 opacity-0 invisible"
@@ -137,7 +154,10 @@ const Navbar = () => {
             <li key={key}>
               <a
                 href={`#${key}`}
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setActiveSection(key);
+                  setIsOpen(false);
+                }}
                 className={`text-xl font-black block transition-all ${
                   activeSection === key
                     ? "text-blue-600 translate-x-3"

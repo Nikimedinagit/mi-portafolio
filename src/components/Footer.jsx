@@ -26,46 +26,40 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full py-4 border-t border-border/40 bg-background/50 backdrop-blur-sm">
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-12 md:px-16 lg:px-24">
-        
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-2">
-          
-          <div className="flex-1 flex justify-start">
-            <Logo className="h-8 w-auto" />
-          </div>
+    <footer className="w-full border-t border-border/60 bg-background">
+      <div className="mx-auto max-w-[1500px] px-5 sm:px-8 md:px-10 lg:px-8">
+        <div className="flex flex-col items-center gap-3 py-3 sm:flex-row sm:justify-between">
+          <Logo className="h-7 w-auto shrink-0" />
 
-          <div className="flex items-center gap-8 flex-1 justify-center">
-            {socialLinks.map(({ icon: Icon, url, label }) => (
+          <p className="order-3 text-center text-xs font-medium text-muted-foreground sm:order-none">
+            © {year} · {t.derechos}
+          </p>
+
+          <div className="flex items-center gap-1">
+            {socialLinks.map((social) => (
               <a
-                key={label}
-                href={url}
+                key={social.label}
+                href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-blue-600 transition-all hover:-translate-y-1 cursor-pointer"
+                className="flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-950/30"
+                aria-label={social.label}
               >
-                <Icon size={20} />
+                <social.icon size={16} />
               </a>
             ))}
-          </div>
 
-          <div className="flex-1 flex justify-end">
+            <span className="mx-1 h-4 w-px bg-border" aria-hidden="true" />
+
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="group flex items-center gap-2 text-[12px] font-black uppercase tracking-widest text-muted-foreground hover:text-blue-600 transition-all cursor-pointer border border-border/40 px-4 py-2 rounded-md hover:bg-muted"
+              className="flex h-8 cursor-pointer items-center gap-1.5 rounded-md px-2 text-xs font-bold text-muted-foreground transition-colors hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-blue-950/30"
             >
-              <ArrowUp size={14} className=" transition-transform" />
+              <ArrowUp size={14} />
               <span>{t.irArriba}</span>
             </button>
           </div>
         </div>
-
-        <div className="border-t border-border/10 w-full text-center">
-          <p className="text-[12px] font-bold tracking-[0.2em] text-muted-foreground">
-            © {year} — {t.derechos}
-          </p>
-        </div>
-
       </div>
     </footer>
   );

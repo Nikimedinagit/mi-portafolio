@@ -1,16 +1,22 @@
-import React from "react";
-
 const SectionHeader = ({ title }) => {
   return (
-    <div className="mb-8 group">
-      <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-foreground leading-none drop-shadow-[2px_2px_0px_rgba(37,99,235,0.2)] transition-all duration-300 group-hover:drop-shadow-[4px_4px_0px_rgba(37,99,235,0.4)]">
-        {title}
-      </h2>
+    <div className="mb-9">
+      <div className="flex items-center gap-3">
+        <span
+          className="font-mono text-2xl font-black tracking-[-0.2em] text-blue-600 md:text-3xl"
+          aria-hidden="true"
+        >
+          //
+        </span>
 
-      <div className="flex gap-2 mt-3 justify-start">
-        <div className="h-[5px] w-12 bg-blue-600 rounded-md shadow-[0_0_15px_rgba(37,99,235,0.3)]" />
-        
-        <div className="h-[5px] w-[5px] bg-blue-600 rounded-full opacity-40" />
+        <h2 className="text-3xl font-black leading-none tracking-tight text-foreground md:text-4xl">
+          {title}
+        </h2>
+      </div>
+
+      <div className="mt-3 flex w-full items-center gap-2" aria-hidden="true">
+        <span className="h-1 w-14 rounded-full bg-blue-600" />
+        <span className="h-px max-w-52 flex-1 bg-gradient-to-r from-blue-300/80 to-transparent dark:from-blue-800/70" />
       </div>
     </div>
   );

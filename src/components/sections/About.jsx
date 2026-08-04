@@ -41,61 +41,44 @@ const About = () => {
   const t = text[language];
 
   const infoCards = [
-    { icon: Calendar, label: t.labelEdad, detail: "21 Años" },
+    { icon: Calendar, label: t.labelEdad, detail: "22 Años" },
     { icon: MapPin, label: t.labelUbica, detail: "Morteros, Cba, Argentina" },
     { icon: GraduationCap, label: t.labelUni, detail: t.uniNombre },
     { icon: Cpu, label: t.labelEstado, detail: t.estadoDesc },
   ];
 
   return (
-    <section id="sobre" className="scroll-mt-24 mb-20">
-      <div>
-        <SectionHeader title={t.titulo} />
+    <section className="py-8">
+      <SectionHeader title={t.titulo} />
 
-        <div className="flex flex-col gap-12">
-          <div className="grid grid-cols-1 lg:grid-cols-10 gap-16 items-start">
-            
-            <div className="lg:col-span-7 space-y-8">
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed text-pretty">
-                {t.descripcion1}
-              </p>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed text-pretty">
-                {t.descripcion2}
-              </p>
-            </div>
-
-            <div className="lg:col-span-3 flex flex-col gap-4">
-              {infoCards.map((item, index) => (
-                <div
-                  key={index}
-                  className="p-5 bg-muted/30 border border-border/50 rounded-md transition-all duration-300 hover:bg-muted/50 shadow-sm group"
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    <item.icon
-                      size={20}
-                      strokeWidth={2.5}
-                      className="text-blue-600 transition-transform group-hover:scale-110"
-                    />
-                    <h3 className="text-base font-bold uppercase tracking-wider opacity-60 leading-none">
-                      {item.label}
-                    </h3>
-                  </div>
-                  <p className="text-base font-bold text-foreground leading-tight pl-[32px]">
-                    {item.detail}
-                  </p>
-                </div>
-              ))}
-            </div>
+      <div className="mb-8 flex flex-wrap gap-2.5">
+        {infoCards.map((item) => (
+          <div
+            key={item.label}
+            className="inline-flex min-h-10 items-center gap-2.5 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm dark:border-white/10 dark:bg-white/[0.04]"
+          >
+            <item.icon className="h-4 w-4 shrink-0 text-blue-600" strokeWidth={2.3} />
+            <span className="font-semibold text-muted-foreground">{item.label}</span>
+            <span className="h-4 w-px bg-slate-200 dark:bg-white/10" aria-hidden="true" />
+            <span className="font-bold text-foreground">{item.detail}</span>
           </div>
+        ))}
+      </div>
 
-          <div className="w-full">
-            <div className="p-6 bg-blue-600/5 border-l-4 border-blue-600 rounded-r-md">
-              <p className="text-xl text-foreground font-medium leading-relaxed text-pretty italic">
-                {t.descripcion3}
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className="grid gap-5 md:grid-cols-2 md:gap-10 lg:gap-14">
+        <p className="text-base font-medium leading-7 text-foreground/85 text-pretty md:text-lg md:leading-8">
+          {t.descripcion1}
+        </p>
+        <p className="text-base leading-7 text-muted-foreground text-pretty md:text-lg md:leading-8">
+          {t.descripcion2}
+        </p>
+      </div>
+
+      <div className="mt-8 flex w-full gap-4 rounded-lg border border-blue-100 bg-blue-50/60 p-5 dark:border-blue-900/50 dark:bg-blue-950/20 md:p-6">
+        <div className="w-1 shrink-0 rounded-full bg-blue-600" aria-hidden="true" />
+        <p className="text-base font-medium leading-7 text-foreground/80 text-pretty md:text-lg md:leading-8">
+          {t.descripcion3}
+        </p>
       </div>
     </section>
   );
