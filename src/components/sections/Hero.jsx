@@ -10,7 +10,7 @@ import {
   MapPin,
 } from "lucide-react";
 import miFoto from "@/assets/mi-foto-perfil.png";
-import miCv from "@/assets/Curriculum-Ignacio Medina.pdf";
+import miCv from "@/assets/Ignacio_Medina_CV.pdf";
 
 const Hero = () => {
   const { language } = useLanguage();
