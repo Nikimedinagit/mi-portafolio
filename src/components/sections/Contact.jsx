@@ -132,7 +132,7 @@ const Contact = () => {
                 : <Copy size={16} className="text-muted-foreground group-hover:text-blue-600" />}
             </button>
 
-            <a href="https://www.linkedin.com/in/ignacio-medina3/" target="_blank" rel="noopener noreferrer" className="group flex w-full items-center gap-3 rounded-lg border border-slate-200 bg-white p-3.5 transition-colors hover:border-blue-200 hover:bg-blue-50/50 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-blue-900">
+            <a href="https://www.linkedin.com/in/ignacio-esteban-medina-047226160/" target="_blank" rel="noopener noreferrer" className="group flex w-full items-center gap-3 rounded-lg border border-slate-200 bg-white p-3.5 transition-colors hover:border-blue-200 hover:bg-blue-50/50 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-blue-900">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-blue-600/10 text-blue-600"><Linkedin size={18} /></span>
               <span className="flex-1 text-sm font-bold text-foreground sm:text-base">{t.linkedinTexto}</span>
               <ExternalLink size={16} className="text-muted-foreground group-hover:text-blue-600" />

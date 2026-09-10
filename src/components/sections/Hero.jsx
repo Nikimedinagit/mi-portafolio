@@ -79,7 +79,7 @@ const Hero = () => {
             </p>
 
             <h1 className="text-5xl font-black leading-[0.98] tracking-tighter text-foreground sm:text-6xl xl:text-7xl">
-              Ignacio Medina
+              Ignacio Esteban Medina
             </h1>
 
             <p className="mt-4 text-lg font-bold text-foreground/80 sm:text-xl">
@@ -140,7 +140,7 @@ const Hero = () => {
             <div className="overflow-hidden rounded-full border-4 border-white bg-slate-100 shadow-2xl shadow-blue-900/10 dark:border-slate-800 dark:bg-slate-900">
               <img
                 src={miFoto}
-                alt="Ignacio Medina"
+                alt="Ignacio Esteban Medina, desarrollador Full Stack"
                 className="h-64 w-64 object-contain sm:h-80 sm:w-80 xl:h-[390px] xl:w-[390px]"
               />
             </div>

@@ -20,7 +20,7 @@ const Footer = () => {
   const t = text[language];
 
   const socialLinks = [
-    { icon: Linkedin, url: "https://www.linkedin.com/in/ignacio-medina3/", label: "LinkedIn" },
+    { icon: Linkedin, url: "https://www.linkedin.com/in/ignacio-esteban-medina-047226160/", label: "LinkedIn" },
     { icon: Github, url: "https://github.com/Nikimedinagit", label: "GitHub" },
     { icon: Mail, url: "mailto:ignaciomedina333@gmail.com", label: "Email" },
   ];
