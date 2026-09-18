@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import SectionHeader from "@/components/SectionHeader";
+import TechnologyBadge from "@/components/TechnologyBadge";
+import { SiGithub } from "react-icons/si";
 import {
-  Github,
   ExternalLink,
   Code2,
   Layout,
@@ -176,10 +177,10 @@ const Projects = () => {
       longDescription: t.ansenuzaLong,
       stack: [
         ".NET 10",
-        "Arquitectura DDD",
+        "DDD",
         "React",
         "Vite",
-        "ASP.NET Web API",
+        "ASP.NET Web",
         "C#",
         "SQL Server",
         "Identity JWT",
@@ -203,13 +204,13 @@ const Projects = () => {
       description: t.workSyncDesc,
       longDescription: t.workSyncLong,
       stack: [
-        ".NET CORE 8",
+        ".NET 8",
         "SQL Server",
         "Identity JWT",
         "MVC",
         "C#",
-        "ASP.NET Web API",
-        language === "es" ? "Modelado de Datos" : "Data Modeling",
+        "ASP.NET Web",
+        language === "es" ? "Modelado de datos" : "Data Modeling",
         "Swagger",
         "IIS Server",
         "Git / GitHub",
@@ -238,9 +239,9 @@ const Projects = () => {
         "Vite",
         "Shadcn/UI",
         "Tailwind CSS",
-        ".NET CORE 8",
+        ".NET 8",
         "C#",
-        "ASP.NET Web API",
+        "ASP.NET Web",
         "SQL Server",
         "Identity JWT",
         "Chart.js",
@@ -349,11 +350,14 @@ const Projects = () => {
               className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-slate-100 hover:text-blue-600 dark:hover:bg-white/5"
               aria-label={`GitHub: ${project.title}`}
             >
-              <Github size={18} />
+              <SiGithub size={18} className="text-[#181717] dark:text-slate-200" />
             </a>
           ) : (
-            <span className="inline-flex h-9 items-center gap-1.5 rounded-md bg-slate-100 px-2.5 text-xs font-bold text-muted-foreground dark:bg-white/5">
-              <Lock size={13} /> {t.repositorioPrivado}
+            <span className="inline-flex h-9 items-center gap-2 rounded-md border border-amber-200/70 bg-amber-50/70 px-2 text-xs font-bold text-amber-700 dark:border-amber-900/50 dark:bg-amber-950/20 dark:text-amber-400">
+              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-amber-100 dark:bg-amber-950/50">
+                <Lock size={13} />
+              </span>
+              {t.repositorioPrivado}
             </span>
           )}
         </div>
@@ -364,12 +368,7 @@ const Projects = () => {
 
         <div className="mb-6 flex flex-wrap gap-2">
           {visibleStack.map((technology) => (
-            <span
-              key={technology}
-              className="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-600 dark:bg-white/5 dark:text-slate-300"
-            >
-              {technology}
-            </span>
+            <TechnologyBadge key={technology} name={technology} />
           ))}
           {hiddenStackCount > 0 && (
             <button
@@ -390,13 +389,19 @@ const Projects = () => {
             rel="noopener noreferrer"
             className="inline-flex h-9 items-center gap-2 rounded-md bg-blue-600 px-3.5 text-sm font-bold text-white transition-colors hover:bg-blue-700"
           >
-            {t.verProyecto} <ExternalLink size={15} />
+            {t.verProyecto}
+            <span className="flex h-6 w-6 items-center justify-center rounded-md bg-white/15">
+              <ExternalLink size={14} />
+            </span>
           </a>
           <button
             onClick={() => setSelectedProject(project)}
             className="inline-flex h-9 cursor-pointer items-center gap-2 rounded-md px-3 text-sm font-bold text-muted-foreground transition-colors hover:bg-slate-100 hover:text-blue-600 dark:hover:bg-white/5"
           >
-            <Info size={15} /> {t.verMas}
+            <span className="flex h-6 w-6 items-center justify-center rounded-md bg-violet-50 text-violet-600 dark:bg-violet-950/30 dark:text-violet-400">
+              <Info size={14} />
+            </span>
+            {t.verMas}
           </button>
         </div>
       </div>
@@ -420,7 +425,7 @@ const Projects = () => {
           className="text-muted-foreground transition-colors hover:text-blue-600"
           aria-label={`GitHub: ${project.title}`}
         >
-          <Github size={17} />
+          <SiGithub size={17} className="text-[#181717] dark:text-slate-200" />
         </a>
       </div>
 
@@ -432,12 +437,7 @@ const Projects = () => {
 
       <div className="mb-5 flex flex-wrap gap-1.5">
         {project.stack.map((technology) => (
-          <span
-            key={technology}
-            className="rounded bg-slate-100 px-2 py-1 text-[11px] font-bold text-slate-600 dark:bg-white/5 dark:text-slate-300"
-          >
-            {technology}
-          </span>
+          <TechnologyBadge key={technology} name={technology} compact />
         ))}
       </div>
 
@@ -447,7 +447,10 @@ const Projects = () => {
         rel="noopener noreferrer"
         className="mt-auto inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition-all hover:gap-3"
       >
-        {t.verProyecto} <ExternalLink size={14} />
+        {t.verProyecto}
+        <span className="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600 dark:bg-blue-950/30 dark:text-blue-400">
+          <ExternalLink size={13} />
+        </span>
       </a>
     </article>
   );
@@ -457,7 +460,7 @@ const Projects = () => {
       <SectionHeader title={t.titulo} />
       <div className="mb-14">
         <h3 className="mb-5 flex items-center gap-2.5 text-lg font-black tracking-tight text-foreground">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-blue-600/10 text-blue-600">
+          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-violet-50 text-violet-600 ring-1 ring-violet-600/10 dark:bg-violet-950/30 dark:text-violet-400">
             <Code2 size={17} />
           </span>
           {t.catFullStack}
@@ -469,7 +472,7 @@ const Projects = () => {
 
       <div>
         <h3 className="mb-5 flex items-center gap-2.5 text-lg font-black tracking-tight text-foreground">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-blue-600/10 text-blue-600">
+          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-cyan-50 text-cyan-600 ring-1 ring-cyan-600/10 dark:bg-cyan-950/30 dark:text-cyan-400">
             <Layout size={17} />
           </span>
           {t.catFrontend}
@@ -508,10 +511,10 @@ const Projects = () => {
                     className="flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-blue-600"
                     aria-label={`GitHub: ${selectedProject.title}`}
                   >
-                    <Github size={17} />
+                    <SiGithub size={17} className="text-[#181717] dark:text-slate-200" />
                   </a>
                 ) : (
-                  <span className="hidden items-center gap-1.5 px-2 text-xs font-bold text-muted-foreground sm:inline-flex">
+                  <span className="hidden items-center gap-2 rounded-md bg-amber-50 px-2 py-1 text-xs font-bold text-amber-700 dark:bg-amber-950/20 dark:text-amber-400 sm:inline-flex">
                     <Lock size={13} /> {t.repositorioPrivado}
                   </span>
                 )}
@@ -553,12 +556,7 @@ const Projects = () => {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.stack.map((technology) => (
-                      <span
-                        key={technology}
-                        className="rounded-md bg-muted px-2.5 py-1.5 text-xs font-bold text-muted-foreground"
-                      >
-                        {technology}
-                      </span>
+                      <TechnologyBadge key={technology} name={technology} />
                     ))}
                   </div>
                 </section>

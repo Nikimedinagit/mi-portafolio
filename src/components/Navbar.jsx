@@ -1,6 +1,12 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import {
+  Languages,
+  Menu,
+  Moon,
+  Sun,
+  X,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
 
@@ -104,11 +110,12 @@ const Navbar = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="h-9 min-w-9 rounded-md px-2.5 text-xs font-black tracking-[0.12em] text-blue-600 transition-colors hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-blue-950/40"
+            className="h-9 min-w-9 gap-1.5 rounded-md border border-slate-200 bg-white/60 px-2.5 text-xs font-black tracking-[0.08em] text-blue-600 shadow-sm transition-all hover:-translate-y-px hover:border-blue-200 hover:bg-blue-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-blue-950/40"
             onClick={toggleLanguage}
             aria-label={language === "es" ? "Cambiar idioma a inglés" : "Change language to Spanish"}
             title={language === "es" ? "Cambiar a inglés" : "Cambiar a español"}
           >
+            <Languages className="h-[16px] w-[16px] text-blue-600" />
             {language === "es" ? "ES" : "EN"}
           </Button>
 
@@ -117,15 +124,15 @@ const Navbar = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="h-9 w-9 rounded-md text-blue-600 transition-colors hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-blue-950/40"
+            className="h-9 w-9 rounded-md border border-slate-200 bg-white/60 shadow-sm transition-all hover:-translate-y-px hover:border-blue-200 hover:bg-blue-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-blue-950/40"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             aria-label={theme === "light" ? "Activar tema oscuro" : "Activar tema claro"}
             title={theme === "light" ? "Tema oscuro" : "Tema claro"}
           >
             {theme === "light" ? (
-              <Moon className="h-[18px] w-[18px]" />
+              <Moon className="h-[18px] w-[18px] text-indigo-500" />
             ) : (
-              <Sun className="h-[18px] w-[18px]" />
+              <Sun className="h-[18px] w-[18px] text-amber-500" />
             )}
           </Button>
 
@@ -134,6 +141,7 @@ const Navbar = () => {
             size="icon"
             className="lg:hidden ml-1 text-blue-600"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           >
             {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
           </Button>

@@ -1,6 +1,7 @@
 import { BriefcaseBusiness, CalendarDays, Globe2, RefreshCw, Users } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import SectionHeader from "@/components/SectionHeader";
+import TechnologyBadge from "@/components/TechnologyBadge";
 
 const Experience = () => {
   const { language } = useLanguage();
@@ -21,7 +22,7 @@ const Experience = () => {
       sueldosDescripcion:
         "Modernización progresiva de un sistema empresarial legado construido en FoxPro, llevándolo hacia una arquitectura web con React y .NET.",
       freelancePuesto: "Desarrollador Full Stack Freelance",
-      freelanceFecha: "Proyecto freelance",
+      freelanceFecha: "Mayo 2025 — Actualidad",
       freelanceDescripcion:
         "Desarrollo integral de la plataforma pública y el panel administrativo autogestionable de Desafíos Ansenuza, incluyendo API, autenticación, inscripciones, contenidos, despliegue y mantenimiento en servidor.",
     },
@@ -40,7 +41,7 @@ const Experience = () => {
       sueldosDescripcion:
         "Progressive modernization of a legacy business system built with FoxPro, moving it to a web architecture with React and .NET.",
       freelancePuesto: "Freelance Full Stack Developer",
-      freelanceFecha: "Freelance project",
+      freelanceFecha: "May 2025 — Present",
       freelanceDescripcion:
         "End-to-end development of the public platform and self-managed administration panel for Desafíos Ansenuza, including API, authentication, registrations, content, deployment, and server maintenance.",
     },
@@ -54,20 +55,23 @@ const Experience = () => {
       title: t.worksyncTitulo,
       date: t.worksyncFecha,
       description: t.worksyncDescripcion,
+      color: "#7C3AED",
     },
     {
       icon: RefreshCw,
       title: t.sueldosTitulo,
       date: t.sueldosFecha,
       description: t.sueldosDescripcion,
+      color: "#0891B2",
     },
   ];
 
   const loguiSoftStack = [
     "React",
     "Vite",
-    ".NET",
-    "ASP.NET Web API",
+    ".NET 10",
+    ".NET 8",
+    "ASP.NET Web",
     "MVC",
     "C#",
     "SQL Server",
@@ -98,8 +102,10 @@ const Experience = () => {
               </div>
             </div>
 
-            <span className="inline-flex w-fit items-center gap-2 rounded-md bg-slate-100 px-3 py-2 text-xs font-bold text-muted-foreground dark:bg-white/5">
-              <CalendarDays size={14} className="text-blue-600" />
+            <span className="inline-flex w-fit items-center gap-2 rounded-md border border-amber-200/70 bg-amber-50/70 py-1.5 pl-1.5 pr-3 text-xs font-bold text-amber-700 dark:border-amber-900/50 dark:bg-amber-950/20 dark:text-amber-400">
+              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-amber-100 dark:bg-amber-950/50">
+                <CalendarDays size={14} />
+              </span>
               {t.fecha}
             </span>
           </header>
@@ -110,9 +116,7 @@ const Experience = () => {
 
           <div className="mb-5 flex flex-wrap gap-2">
             {loguiSoftStack.map((technology) => (
-              <span key={technology} className="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-600 dark:bg-white/5 dark:text-slate-300">
-                {technology}
-              </span>
+              <TechnologyBadge key={technology} name={technology} />
             ))}
           </div>
 
@@ -121,10 +125,19 @@ const Experience = () => {
               <div key={workstream.title} className="rounded-lg border border-slate-200 bg-slate-50/70 p-4 dark:border-white/10 dark:bg-white/[0.03]">
                 <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2.5">
-                    <workstream.icon size={18} className="text-blue-600" />
+                    <span
+                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md"
+                      style={{ color: workstream.color, backgroundColor: `${workstream.color}14` }}
+                      aria-hidden="true"
+                    >
+                      <workstream.icon size={17} />
+                    </span>
                     <h4 className="font-black tracking-tight text-foreground">{workstream.title}</h4>
                   </div>
-                  <span className="text-[11px] font-bold text-muted-foreground">{workstream.date}</span>
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground">
+                    <CalendarDays size={13} className="shrink-0 text-amber-500" />
+                    {workstream.date}
+                  </span>
                 </div>
                 <p className="text-sm leading-6 text-muted-foreground">{workstream.description}</p>
               </div>
@@ -148,8 +161,10 @@ const Experience = () => {
               </div>
             </div>
 
-            <span className="inline-flex w-fit items-center gap-2 rounded-md bg-slate-100 px-3 py-2 text-xs font-bold text-muted-foreground dark:bg-white/5">
-              <CalendarDays size={14} className="text-blue-600" />
+            <span className="inline-flex w-fit items-center gap-2 rounded-md border border-amber-200/70 bg-amber-50/70 py-1.5 pl-1.5 pr-3 text-xs font-bold text-amber-700 dark:border-amber-900/50 dark:bg-amber-950/20 dark:text-amber-400">
+              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-amber-100 dark:bg-amber-950/50">
+                <CalendarDays size={14} />
+              </span>
               {t.freelanceFecha}
             </span>
           </header>
@@ -159,10 +174,8 @@ const Experience = () => {
           </p>
 
           <div className="flex flex-wrap gap-2">
-            {["React", "Vite", ".NET 10", "Arquitectura DDD", "SQL Server", "DonWeb", "SSL/TLS"].map((technology) => (
-              <span key={technology} className="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-600 dark:bg-white/5 dark:text-slate-300">
-                {technology}
-              </span>
+            {["React", "Vite", ".NET 10", "DDD", "SQL Server", "DonWeb", "SSL/TLS"].map((technology) => (
+              <TechnologyBadge key={technology} name={technology} />
             ))}
           </div>
         </div>

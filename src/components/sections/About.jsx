@@ -1,5 +1,5 @@
 import { useLanguage } from "@/context/LanguageContext";
-import { Cpu, MapPin, GraduationCap, Calendar } from "lucide-react";
+import { CircleCheckBig, MapPin, GraduationCap, CalendarDays } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 
 const About = () => {
@@ -18,6 +18,7 @@ const About = () => {
       labelUbica: "Ubicación",
       labelUni: "Formación",
       labelEstado: "Estado",
+      edadDetalle: "22 años",
       uniNombre: "Universidad Provincial de Córdoba (UPC)",
       estadoDesc: "Abierto a nuevos desafíos.",
     },
@@ -33,6 +34,7 @@ const About = () => {
       labelUbica: "Location",
       labelUni: "Education",
       labelEstado: "Status",
+      edadDetalle: "22 years old",
       uniNombre: "Universidad Provincial de Córdoba (UPC)",
       estadoDesc: "Open to new challenges.",
     },
@@ -41,10 +43,10 @@ const About = () => {
   const t = text[language];
 
   const infoCards = [
-    { icon: Calendar, label: t.labelEdad, detail: "22 Años" },
-    { icon: MapPin, label: t.labelUbica, detail: "Morteros, Cba, Argentina" },
-    { icon: GraduationCap, label: t.labelUni, detail: t.uniNombre },
-    { icon: Cpu, label: t.labelEstado, detail: t.estadoDesc },
+    { icon: CalendarDays, label: t.labelEdad, detail: t.edadDetalle, color: "#D97706" },
+    { icon: MapPin, label: t.labelUbica, detail: "Morteros, Cba, Argentina", color: "#EA4335" },
+    { icon: GraduationCap, label: t.labelUni, detail: t.uniNombre, color: "#7C3AED" },
+    { icon: CircleCheckBig, label: t.labelEstado, detail: t.estadoDesc, color: "#16A34A" },
   ];
 
   return (
@@ -55,9 +57,15 @@ const About = () => {
         {infoCards.map((item) => (
           <div
             key={item.label}
-            className="inline-flex min-h-10 items-center gap-2.5 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm dark:border-white/10 dark:bg-white/[0.04]"
+            className="group inline-flex min-h-11 items-center gap-2.5 rounded-full border border-slate-200 bg-slate-50 py-1.5 pl-1.5 pr-3.5 text-sm transition-all hover:-translate-y-px hover:bg-white hover:shadow-sm dark:border-white/10 dark:bg-white/[0.04] dark:hover:bg-white/[0.07]"
           >
-            <item.icon className="h-4 w-4 shrink-0 text-blue-600" strokeWidth={2.3} />
+            <span
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform group-hover:scale-105"
+              style={{ color: item.color, backgroundColor: `${item.color}14` }}
+              aria-hidden="true"
+            >
+              <item.icon className="h-4 w-4" strokeWidth={2.3} />
+            </span>
             <span className="font-semibold text-muted-foreground">{item.label}</span>
             <span className="h-4 w-px bg-slate-200 dark:bg-white/10" aria-hidden="true" />
             <span className="font-bold text-foreground">{item.detail}</span>
@@ -69,7 +77,7 @@ const About = () => {
         <p className="text-base font-medium leading-7 text-foreground/85 text-pretty md:text-lg md:leading-8">
           {t.descripcion1}
         </p>
-        <p className="text-base leading-7 text-muted-foreground text-pretty md:text-lg md:leading-8">
+        <p className="text-base font-medium leading-7 text-foreground/85 text-pretty md:text-lg md:leading-8">
           {t.descripcion2}
         </p>
       </div>

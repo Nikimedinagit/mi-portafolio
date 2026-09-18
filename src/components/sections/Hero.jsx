@@ -1,14 +1,13 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { Button } from "@/components/ui/button";
 import {
-  Linkedin,
-  Github,
-  Mail,
   Download,
   ArrowDown,
   ArrowRight,
   MapPin,
 } from "lucide-react";
+import { SiGithub, SiGmail } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa6";
 import miFoto from "@/assets/mi-foto-perfil.png";
 import miCv from "@/assets/Ignacio_Medina_CV.pdf";
 
@@ -42,21 +41,24 @@ const Hero = () => {
 
   const socialLinks = [
     {
-      icon: Linkedin,
+      icon: FaLinkedinIn,
       url: "https://www.linkedin.com/in/ignacio-esteban-medina-047226160/",
       label: "LinkedIn",
+      color: "#0A66C2",
       hoverColor: "hover:border-[#0077b5]/40 hover:text-[#0077b5]",
     },
     {
-      icon: Github,
+      icon: SiGithub,
       url: "https://github.com/Nikimedinagit",
       label: "GitHub",
+      color: "#64748B",
       hoverColor: "hover:border-foreground/30 hover:text-foreground",
     },
     {
-      icon: Mail,
+      icon: SiGmail,
       url: "mailto:ignaciomedina333@gmail.com",
       label: "Email",
+      color: "#EA4335",
       hoverColor: "hover:border-[#ea4335]/40 hover:text-[#ea4335]",
     },
   ];
@@ -110,7 +112,7 @@ const Hero = () => {
               className="h-11 w-full gap-2 rounded-md border-slate-300 bg-white/60 px-5 font-bold shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-300 hover:bg-white dark:border-white/15 dark:bg-white/5 dark:hover:bg-white/10 sm:w-auto"
             >
               <a href={miCv} download="Cv-Ignacio-Medina.pdf">
-                <Download className="h-4 w-4" />
+                <Download className="h-4 w-4 text-blue-600" />
                 {t.btnCv}
               </a>
             </Button>
@@ -123,9 +125,15 @@ const Hero = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex h-9 items-center gap-2 rounded-md border border-transparent px-2.5 text-sm font-semibold text-muted-foreground transition-all hover:bg-white/70 dark:hover:bg-white/5 ${social.hoverColor}`}
+                className={`inline-flex h-10 items-center gap-2.5 rounded-lg border border-slate-200 bg-white/60 px-2.5 pr-3 text-sm font-semibold text-muted-foreground shadow-sm transition-all hover:-translate-y-px hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 ${social.hoverColor}`}
               >
-                <social.icon className="h-4 w-4" />
+                <span
+                  className="flex h-7 w-7 items-center justify-center rounded-md bg-white shadow-sm ring-1 ring-slate-900/5 dark:bg-slate-900 dark:ring-white/10"
+                  style={{ color: social.color }}
+                  aria-hidden="true"
+                >
+                  <social.icon className="h-4 w-4" />
+                </span>
                 <span>{social.label}</span>
               </a>
             ))}
@@ -151,7 +159,9 @@ const Hero = () => {
             </div>
 
             <div className="absolute -bottom-3 left-2 flex items-center gap-2 whitespace-nowrap rounded-md border border-blue-100 bg-white/95 px-3 py-2 text-xs font-bold text-slate-600 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-slate-900/95 dark:text-slate-300 sm:left-0">
-              <MapPin className="h-3.5 w-3.5 text-blue-600" />
+              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-[#EA4335] dark:bg-red-950/30">
+                <MapPin className="h-3.5 w-3.5" />
+              </span>
               {t.ubicacion}
             </div>
 

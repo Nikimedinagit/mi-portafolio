@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import SectionHeader from "@/components/SectionHeader";
+import { SiGmail } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa6";
 import {
-  Mail, Linkedin, Send, MapPin, Briefcase, CheckCircle2,
+  Send, MapPin, Briefcase, CheckCircle2,
   RotateCcw, Copy, ExternalLink, LoaderCircle, Code2,
 } from "lucide-react";
 
@@ -87,7 +89,9 @@ const Contact = () => {
 
           <div className="mt-5">
             <p className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-foreground">
-              <Code2 size={16} className="text-blue-600" />
+              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-violet-50 text-violet-600 dark:bg-violet-950/30 dark:text-violet-400">
+                <Code2 size={15} />
+              </span>
               {t.serviciosTitulo}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -101,7 +105,7 @@ const Contact = () => {
 
           <div className="mt-5 grid gap-3 rounded-lg border border-slate-200 bg-slate-50/70 p-3.5 sm:grid-cols-2 dark:border-white/10 dark:bg-white/[0.03]">
             <div className="flex items-start gap-3">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-blue-600/10 text-blue-600">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-emerald-50 text-emerald-600 dark:bg-emerald-950/30 dark:text-emerald-400">
                 <Briefcase size={16} />
               </span>
               <div>
@@ -110,7 +114,7 @@ const Contact = () => {
               </div>
             </div>
             <a href="https://maps.google.com/?q=Morteros,Cordoba,Argentina" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-blue-600/10 text-blue-600">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-red-50 text-[#EA4335] dark:bg-red-950/30">
                 <MapPin size={16} />
               </span>
               <div>
@@ -122,20 +126,20 @@ const Contact = () => {
 
           <div className="mt-3 space-y-3">
             <button type="button" onClick={handleCopyEmail} className="group flex w-full cursor-pointer items-center gap-3 rounded-lg border border-slate-200 bg-white p-3.5 text-left transition-colors hover:border-blue-200 hover:bg-blue-50/50 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-blue-900">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-blue-600/10 text-blue-600"><Mail size={18} /></span>
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-red-50 text-[#EA4335] dark:bg-red-950/30"><SiGmail size={17} /></span>
               <span className="min-w-0 flex-1">
                 <span className="block text-[10px] font-black uppercase tracking-[0.14em] text-muted-foreground">{t.emailDirecto}</span>
                 <span className="block truncate text-sm font-bold text-foreground sm:text-base">{emailRaw}</span>
               </span>
               {copied
-                ? <span className="rounded bg-blue-600 px-2 py-1 text-[10px] font-black text-white">{t.copiado}</span>
-                : <Copy size={16} className="text-muted-foreground group-hover:text-blue-600" />}
+                ? <span className="inline-flex items-center gap-1 rounded bg-emerald-600 px-2 py-1 text-[10px] font-black text-white"><CheckCircle2 size={12} /> {t.copiado}</span>
+                : <span className="flex h-7 w-7 items-center justify-center rounded-md bg-blue-50 text-blue-600 dark:bg-blue-950/30"><Copy size={14} /></span>}
             </button>
 
             <a href="https://www.linkedin.com/in/ignacio-esteban-medina-047226160/" target="_blank" rel="noopener noreferrer" className="group flex w-full items-center gap-3 rounded-lg border border-slate-200 bg-white p-3.5 transition-colors hover:border-blue-200 hover:bg-blue-50/50 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-blue-900">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-blue-600/10 text-blue-600"><Linkedin size={18} /></span>
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-blue-50 text-[#0A66C2] dark:bg-blue-950/30"><FaLinkedinIn size={17} /></span>
               <span className="flex-1 text-sm font-bold text-foreground sm:text-base">{t.linkedinTexto}</span>
-              <ExternalLink size={16} className="text-muted-foreground group-hover:text-blue-600" />
+              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-blue-50 text-blue-600 dark:bg-blue-950/30"><ExternalLink size={14} /></span>
             </a>
           </div>
 
@@ -161,13 +165,13 @@ const Contact = () => {
               </div>
               {submitError && <p className="text-sm font-semibold text-red-600">{t.error}</p>}
               <button type="submit" disabled={isSending} className="flex h-11 w-full items-center justify-center gap-2 rounded-md bg-blue-600 px-5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto">
-                {isSending ? <LoaderCircle size={16} className="animate-spin" /> : <Send size={16} />}
+                {isSending ? <LoaderCircle size={16} className="animate-spin" /> : <span className="flex h-6 w-6 items-center justify-center rounded-md bg-white/15"><Send size={14} /></span>}
                 {isSending ? t.enviando : t.enviar}
               </button>
             </form>
           ) : (
             <div className="space-y-5 py-10 text-center animate-in fade-in zoom-in duration-300">
-              <div className="flex justify-center"><CheckCircle2 size={52} className="text-blue-600" /></div>
+              <div className="flex justify-center"><span className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 ring-1 ring-emerald-600/10 dark:bg-emerald-950/30 dark:text-emerald-400"><CheckCircle2 size={36} /></span></div>
               <h3 className="text-2xl font-black tracking-tight text-foreground">{t.exito}</h3>
               <button type="button" onClick={() => setIsSubmitted(false)} className="mx-auto flex cursor-pointer items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700"><RotateCcw size={14} /> {t.reintentar}</button>
             </div>
