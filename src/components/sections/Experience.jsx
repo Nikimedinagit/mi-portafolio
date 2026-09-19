@@ -1,4 +1,5 @@
 import { BriefcaseBusiness, CalendarDays, Globe2, RefreshCw, Users } from "lucide-react";
+import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import SectionHeader from "@/components/SectionHeader";
 import TechnologyBadge from "@/components/TechnologyBadge";
@@ -25,6 +26,8 @@ const Experience = () => {
       freelanceFecha: "Mayo 2025 — Actualidad",
       freelanceDescripcion:
         "Desarrollo integral de la plataforma pública y el panel administrativo autogestionable de Desafíos Ansenuza, incluyendo API, autenticación, inscripciones, contenidos, despliegue y mantenimiento en servidor.",
+      verMasTecnologias: "Ver más tecnologías",
+      verMenosTecnologias: "Ver menos",
     },
     en: {
       titulo: "Experience",
@@ -44,10 +47,14 @@ const Experience = () => {
       freelanceFecha: "May 2025 — Present",
       freelanceDescripcion:
         "End-to-end development of the public platform and self-managed administration panel for Desafíos Ansenuza, including API, authentication, registrations, content, deployment, and server maintenance.",
+      verMasTecnologias: "View more technologies",
+      verMenosTecnologias: "Show less",
     },
   };
 
   const t = text[language];
+  const [isStackExpanded, setIsStackExpanded] = useState(false);
+  const [isAnsenuzaStackExpanded, setIsAnsenuzaStackExpanded] = useState(false);
 
   const workstreams = [
     {
@@ -67,20 +74,147 @@ const Experience = () => {
   ];
 
   const loguiSoftStack = [
-    "React",
-    "Vite",
-    ".NET 10",
-    ".NET 8",
-    "ASP.NET Web",
-    "MVC",
-    "C#",
-    "SQL Server",
     "HTML",
     "CSS",
     "JavaScript",
-    "Git / GitHub",
-    "Postman",
+    "React",
+    "React Router",
+    "Vite",
+    "Bootstrap",
+    "Tailwind CSS",
+    "Shadcn/UI",
+    "Responsive Design",
+    "jQuery",
+    "Fetch API",
+    "Chart.js",
+    "SweetAlert2",
+    "Select2",
+    "jsPDF",
+    "SheetJS",
+    "ExcelJS",
+    "Face-api.js",
+    "Web Camera API",
+    "C#",
+    "MVC",
+    ".NET 8",
+    "ASP.NET Web",
+    "REST APIs",
+    "Entity Framework Core",
+    "LINQ",
+    "Identity JWT",
+    "Authentication & Authorization",
+    "Refresh Tokens",
+    "Logging",
+    "Clean Architecture",
+    "Dependency Injection",
+    "Background Services",
+    "File Handling",
+    "SOLID",
+    "CORS",
+    language === "es" ? "Arquitectura multiempresa" : "Multi-tenant Architecture",
+    "SQL Server",
+    "T-SQL",
+    "Code First",
+    language === "es" ? "Consultas SQL" : "SQL Queries",
+    language === "es" ? "Migraciones" : "Migrations",
+    language === "es" ? "Modelado de datos" : "Data Modeling",
+    language === "es" ? "Normalización" : "Normalization",
+    language === "es" ? "Índices" : "Indexes",
+    language === "es" ? "Transacciones" : "Transactions",
+    language === "es" ? "Relaciones y claves foráneas" : "Relationships & Foreign Keys",
+    language === "es" ? "Integridad referencial" : "Referential Integrity",
+    language === "es" ? "Seed de datos" : "Data Seeding",
+    language === "es" ? "Optimización de consultas" : "Query Optimization",
+    "Visual Studio",
+    "VS Code",
     "Swagger",
+    "OpenAPI",
+    "Git / GitHub",
+    "npm",
+    "NuGet",
+    ".NET CLI",
+    "EF Core Tools",
+    "IIS Server",
+    "ASP.NET Core Module",
+    "dotnet publish",
+    "Web.config",
+    "Hosting In-Process",
+    "SSL/TLS",
+    language === "es" ? "Configuración por ambientes" : "Environment Configuration",
+    language === "es" ? "Arquitectura de software" : "Software Architecture",
+    language === "es" ? "Arquitectura por capas" : "Layered Architecture",
+    language === "es" ? "Programación orientada a objetos" : "Object-Oriented Programming",
+    language === "es" ? "Patrones de diseño" : "Design Patterns",
+    language === "es" ? "Patrón DTO" : "DTO Pattern",
+    language === "es" ? "Manejo de excepciones" : "Exception Handling",
+    "Refactoring",
+    language === "es" ? "Resolución de problemas" : "Problem Solving",
+    language === "es" ? "Modelado relacional" : "Relational Modeling",
+    language === "es" ? "Trabajo en equipo" : "Teamwork",
+    "Code Review",
+  ];
+
+  const ansenuzaStack = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "React Router",
+    "Vite",
+    "Tailwind CSS",
+    "Shadcn/UI",
+    "Responsive Design",
+    "Axios",
+    "C#",
+    "MVC",
+    "DDD",
+    ".NET 10",
+    "Identity JWT",
+    "Authentication & Authorization",
+    "Clean Architecture",
+    "Fluent Validation",
+    "ASP.NET Web",
+    "REST APIs",
+    "Entity Framework Core",
+    "Dependency Injection",
+    "SOLID",
+    "CORS",
+    "LINQ",
+    "File Handling",
+    "MediatR",
+    language === "es" ? "Arquitectura multiempresa" : "Multi-tenant Architecture",
+    "SQL Server",
+    language === "es" ? "Modelado de datos" : "Data Modeling",
+    language === "es" ? "Normalización" : "Normalization",
+    language === "es" ? "Índices" : "Indexes",
+    language === "es" ? "Transacciones" : "Transactions",
+    "Code First",
+    language === "es" ? "Migraciones" : "Migrations",
+    language === "es" ? "Relaciones y claves foráneas" : "Relationships & Foreign Keys",
+    language === "es" ? "Integridad referencial" : "Referential Integrity",
+    language === "es" ? "Seed de datos" : "Data Seeding",
+    language === "es" ? "Optimización de consultas" : "Query Optimization",
+    "VS Code",
+    "OpenAPI",
+    "Git / GitHub",
+    "npm",
+    "NuGet",
+    ".NET CLI",
+    "EF Core Tools",
+    "IIS Server",
+    "ASP.NET Core Module",
+    "dotnet publish",
+    "Web.config",
+    "Hosting In-Process",
+    language === "es" ? "Configuración por ambientes" : "Environment Configuration",
+    "SSL/TLS",
+    language === "es" ? "Arquitectura de software" : "Software Architecture",
+    language === "es" ? "Patrones de diseño" : "Design Patterns",
+    language === "es" ? "Programación orientada a objetos" : "Object-Oriented Programming",
+    language === "es" ? "Arquitectura por capas" : "Layered Architecture",
+    language === "es" ? "Patrón DTO" : "DTO Pattern",
+    language === "es" ? "Manejo de excepciones" : "Exception Handling",
+    language === "es" ? "Modelado relacional" : "Relational Modeling",
   ];
 
   return (
@@ -114,10 +248,22 @@ const Experience = () => {
             {t.descripcion}
           </p>
 
-          <div className="mb-5 flex flex-wrap gap-2">
-            {loguiSoftStack.map((technology) => (
-              <TechnologyBadge key={technology} name={technology} />
-            ))}
+          <div className="mb-5">
+            <div>
+              <div className={`flex flex-wrap gap-2 overflow-hidden ${isStackExpanded ? "max-h-none" : "max-h-28"}`}>
+                {loguiSoftStack.map((technology) => (
+                  <TechnologyBadge key={technology} name={technology} />
+                ))}
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => setIsStackExpanded((current) => !current)}
+              className="mt-3 cursor-pointer rounded-md border border-blue-100 px-3 py-1.5 text-xs font-bold text-blue-600 transition-colors hover:border-blue-300 hover:bg-blue-50 dark:border-blue-900 dark:hover:bg-blue-950/40"
+              aria-expanded={isStackExpanded}
+            >
+              {isStackExpanded ? t.verMenosTecnologias : t.verMasTecnologias}
+            </button>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2">
@@ -173,10 +319,20 @@ const Experience = () => {
             {t.freelanceDescripcion}
           </p>
 
-          <div className="flex flex-wrap gap-2">
-            {["React", "Vite", ".NET 10", "DDD", "SQL Server", "DonWeb", "SSL/TLS"].map((technology) => (
-              <TechnologyBadge key={technology} name={technology} />
-            ))}
+          <div>
+            <div className={`flex flex-wrap gap-2 overflow-hidden ${isAnsenuzaStackExpanded ? "max-h-none" : "max-h-28"}`}>
+              {ansenuzaStack.map((technology) => (
+                <TechnologyBadge key={technology} name={technology} />
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => setIsAnsenuzaStackExpanded((current) => !current)}
+              className="mt-3 cursor-pointer rounded-md border border-blue-100 px-3 py-1.5 text-xs font-bold text-blue-600 transition-colors hover:border-blue-300 hover:bg-blue-50 dark:border-blue-900 dark:hover:bg-blue-950/40"
+              aria-expanded={isAnsenuzaStackExpanded}
+            >
+              {isAnsenuzaStackExpanded ? t.verMenosTecnologias : t.verMasTecnologias}
+            </button>
           </div>
         </div>
       </article>

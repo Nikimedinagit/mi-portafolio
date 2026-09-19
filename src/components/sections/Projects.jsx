@@ -11,6 +11,7 @@ import {
   Server,
   Info,
   CheckCircle2,
+  Construction,
   X,
   Lock,
 } from "lucide-react";
@@ -34,6 +35,47 @@ const Projects = () => {
       tecnologias: "Tecnologías",
       repositorioPrivado: "Repositorio privado",
       cerrar: "Cerrar",
+      enDesarrollo: "En desarrollo",
+
+      mpmTitle: "MPM Solutions",
+      mpmSubtitle: "Sistema de Gestión para Concesionaria",
+      mpmDesc:
+        "Plataforma integral en desarrollo para centralizar la gestión operativa de una concesionaria y su catálogo de vehículos.",
+      mpmLong:
+        "MPM Solutions está siendo desarrollado como un sistema modular para administrar la operación de una concesionaria. Combina una arquitectura robusta en .NET 10 con una interfaz moderna en React, control granular de accesos, gestión de imágenes y servicios de comunicación e infraestructura.",
+      mpmFeatures: [
+        "Gestión de vehículos: Administración del catálogo y de las imágenes asociadas a cada unidad.",
+        "Seguridad avanzada: Autenticación JWT, roles, permisos personalizados por usuario y validación de sesión.",
+        "Recuperación de acceso: Flujos seguros para restablecer el acceso de los usuarios.",
+        "Gestión de imágenes: Almacenamiento en Amazon S3 o sistema local y procesamiento mediante ImageMagick.",
+        "Comunicaciones: Envío de correos con MailKit y mensajes SMS mediante Twilio.",
+        "Frontend protegido: Rutas privadas, control de permisos y validación de formularios.",
+        "Arquitectura modular: Separación de Domain, Application, Infrastructure y API con DDD, CQRS y MediatR.",
+        "Persistencia confiable: Entity Framework Core, repositorios, transacciones, Soft Delete e integridad referencial.",
+      ],
+
+      sueldosTitle: "LoguiSueldo",
+      sueldosSubtitle: "Sistema de Gestión de Sueldos",
+      sueldosDesc:
+        "Simplificando la liquidación de haberes mediante automatización, centralización y control integral de la información laboral.",
+      sueldosLong:
+        "LoguiSueldo centraliza y automatiza los procesos relacionados con la liquidación salarial. Permite administrar empleados, convenios, conceptos, novedades y costos patronales, reduciendo errores operativos y agilizando la generación de recibos, libros de sueldo e informes exportables para una toma de decisiones más precisa.",
+      sueldosFeatures: [
+        "Gestión de Personal: Administración de empleados, legajos, datos laborales y configuraciones adicionales.",
+        "Gestión de Empresas: Registro y administración de empresas, cuentas y usuarios.",
+        "Convenios y Categorías: Configuración de convenios colectivos, categorías y escalas aplicables.",
+        "Conceptos de Liquidación: Gestión de haberes, descuentos, aportes, contribuciones y fórmulas de cálculo.",
+        "Plantillas de Liquidación: Creación y asignación de plantillas personalizadas para empleados.",
+        "Generación de Sueldos: Liquidación individual y procesamiento masivo de haberes.",
+        "Control de Horas y Novedades: Registro de horas trabajadas y variables necesarias para cada período.",
+        "Costos Patronales: Cálculo y administración de cargas y contribuciones empresariales.",
+        "Recibos de Sueldo: Generación, consulta y exportación de recibos en formato PDF.",
+        "Libro de Sueldos: Consolidación y exportación de información salarial por período.",
+        "Integración con ARCA/AFIP: Configuración de conceptos y generación de archivos para Sueldo Digital.",
+        "Parámetros Laborales: Administración de obras sociales, ART, modalidades de contratación, jubilación y antigüedad.",
+        "Seguridad y Accesos: Autenticación mediante JWT, autorización de usuarios y separación de información por cuenta.",
+        "Panel Administrativo: Gestión centralizada de usuarios, empresas y configuraciones generales del sistema.",
+      ],
 
       ansenuzaTitle: "Desafíos Ansenuza",
       ansenuzaSubtitle: "Plataforma de Gestión de Rally",
@@ -66,12 +108,12 @@ const Projects = () => {
         "Panel de Configuración: ABM completo y flexible para parametrizar puestos y categorías del sistema.",
       ],
 
-      workSyncTitle: "WorkSync RRHH",
+      workSyncTitle: "LoguiRRHH",
       workSyncSubtitle: "Sistema de Gestión de Recursos Humanos",
       workSyncDesc:
         "Ecosistema integral que centraliza la operación de talento humano, eliminando el caos administrativo mediante biometría y automatización de procesos.",
       workSyncLong:
-        "WorkSync resuelve la fragmentación de datos y la ineficiencia en el control de personal. Al integrar biometría facial y flujos de aprobación automáticos, garantiza la veracidad de la asistencia y optimiza la gestión legal de legajos, permitiendo una toma de decisiones basada en indicadores reales y exportables.",
+        "LoguiRRHH resuelve la fragmentación de datos y la ineficiencia en el control de personal. Al integrar biometría facial y flujos de aprobación automáticos, garantiza la veracidad de la asistencia y optimiza la gestión legal de legajos, permitiendo una toma de decisiones basada en indicadores reales y exportables.",
       features: [
         "Reconocimiento Facial: Registro de jornada mediante biometría facial.",
         "Módulo de Legajos: Gestión de datos personales, contacto y laboral.",
@@ -98,6 +140,47 @@ const Projects = () => {
       tecnologias: "Technologies",
       repositorioPrivado: "Private repository",
       cerrar: "Close",
+      enDesarrollo: "In development",
+
+      mpmTitle: "MPM Solutions",
+      mpmSubtitle: "Dealership Management System",
+      mpmDesc:
+        "Comprehensive platform under development for centralizing dealership operations and vehicle catalog management.",
+      mpmLong:
+        "MPM Solutions is being developed as a modular system for managing dealership operations. It combines a robust .NET 10 architecture with a modern React interface, granular access control, image management, and communication and infrastructure services.",
+      mpmFeatures: [
+        "Vehicle Management: Administration of the catalog and the images associated with each vehicle.",
+        "Advanced Security: JWT authentication, roles, user-specific permissions, and session validation.",
+        "Account Recovery: Secure workflows for restoring user access.",
+        "Image Management: Amazon S3 or local storage with ImageMagick processing.",
+        "Communications: Email delivery through MailKit and SMS messaging through Twilio.",
+        "Protected Frontend: Private routes, permission control, and form validation.",
+        "Modular Architecture: Domain, Application, Infrastructure, and API separation with DDD, CQRS, and MediatR.",
+        "Reliable Persistence: Entity Framework Core, repositories, transactions, Soft Delete, and referential integrity.",
+      ],
+
+      sueldosTitle: "LoguiSueldo",
+      sueldosSubtitle: "Payroll Management System",
+      sueldosDesc:
+        "Simplifying payroll processing through automation, centralization, and comprehensive control of employment information.",
+      sueldosLong:
+        "LoguiSueldo centralizes and automates payroll-related processes. It manages employees, collective agreements, payroll concepts, variable inputs, and employer costs, reducing operational errors while streamlining the generation of payslips, payroll books, and exportable reports for more accurate decision-making.",
+      sueldosFeatures: [
+        "Personnel Management: Employee records, files, employment data, and additional settings.",
+        "Company Management: Registration and administration of companies, accounts, and users.",
+        "Agreements and Categories: Configuration of collective agreements, categories, and applicable pay scales.",
+        "Payroll Concepts: Management of earnings, deductions, contributions, employer charges, and calculation formulas.",
+        "Payroll Templates: Creation and assignment of customized templates for employees.",
+        "Payroll Processing: Individual payroll calculation and bulk processing.",
+        "Hours and Variable Inputs: Recording of worked hours and period-specific payroll variables.",
+        "Employer Costs: Calculation and administration of employer charges and contributions.",
+        "Payslips: Generation, review, and PDF export of employee payslips.",
+        "Payroll Book: Consolidation and export of payroll information by period.",
+        "ARCA/AFIP Integration: Payroll concept configuration and file generation for Sueldo Digital.",
+        "Employment Parameters: Administration of health insurance providers, workplace insurance, contract types, retirement, and seniority.",
+        "Security and Access: JWT authentication, user authorization, and account-level data isolation.",
+        "Administration Panel: Centralized management of users, companies, and general system settings.",
+      ],
 
       ansenuzaTitle: "Desafíos Ansenuza",
       ansenuzaSubtitle: "Rally Management Platform",
@@ -131,12 +214,12 @@ const Projects = () => {
       ],
 
 
-      workSyncTitle: "WorkSync HR",
+      workSyncTitle: "LoguiRRHH",
       workSyncSubtitle: "Human Resources Management System",
       workSyncDesc:
         "Comprehensive ecosystem that centralizes human talent operations, eliminating administrative chaos through biometrics and process automation.",
       workSyncLong:
-        "WorkSync resolves data fragmentation and personnel control inefficiency. By integrating facial biometrics and automated approval workflows, it guarantees attendance accuracy and optimizes legal record management, enabling decision-making based on real, exportable indicators.",
+        "LoguiRRHH resolves data fragmentation and personnel control inefficiency. By integrating facial biometrics and automated approval workflows, it guarantees attendance accuracy and optimizes legal record management, enabling decision-making based on real, exportable indicators.",
       features: [
         "Facial Recognition: Attendance tracking via facial biometrics.",
         "Employee Records: Personal, contact, and labor data management.",
@@ -171,31 +254,152 @@ const Projects = () => {
 
   const fullStackProjects = [
     {
-      title: t.ansenuzaTitle,
-      subtitle: t.ansenuzaSubtitle,
-      description: t.ansenuzaDesc,
-      longDescription: t.ansenuzaLong,
+      title: t.mpmTitle,
+      subtitle: t.mpmSubtitle,
+      description: t.mpmDesc,
+      longDescription: t.mpmLong,
       stack: [
-        ".NET 10",
-        "DDD",
+        "HTML",
+        "CSS",
+        "JavaScript",
         "React",
+        "React Router",
         "Vite",
-        "ASP.NET Web",
-        "C#",
-        "SQL Server",
-        "Identity JWT",
-        "REST APIs",
-        "Swagger",
         "Tailwind CSS",
         "Shadcn/UI",
-        "DonWeb",
-        "SSL/TLS",
-        "FileZilla",
+        "Responsive Design",
+        "Axios",
+        "React Query",
+        "TanStack Table",
+        "React Hook Form",
+        "Zod",
+        "Framer Motion",
+        "Radix UI",
+        "Context API",
+        language === "es" ? "Rutas protegidas" : "Protected Routes",
+        language === "es" ? "Validación de formularios" : "Form Validation",
+        language === "es" ? "Temas visuales" : "Visual Themes",
+        "ESLint",
+        "C#",
+        ".NET 10",
+        "Identity JWT",
+        "Authentication & Authorization",
+        "ASP.NET Web",
+        "REST APIs",
+        "Entity Framework Core",
+        "Dependency Injection",
+        "CORS",
+        "LINQ",
+        "SOLID",
+        "Clean Architecture",
+        "DDD",
+        "CQRS",
+        "MediatR",
+        "Fluent Validation",
+        "Repository Pattern",
+        "Custom Middleware",
+        "Soft Delete",
+        "Options Pattern",
+        language === "es" ? "Roles y permisos" : "Roles & Permissions",
+        language === "es" ? "Validación de sesión" : "Session Validation",
+        language === "es" ? "Manejo de excepciones" : "Exception Handling",
+        "SQL Server",
+        language === "es" ? "Modelado de datos" : "Data Modeling",
+        language === "es" ? "Normalización" : "Normalization",
+        language === "es" ? "Índices" : "Indexes",
+        "Code First",
+        language === "es" ? "Migraciones" : "Migrations",
+        language === "es" ? "Relaciones y claves foráneas" : "Relationships & Foreign Keys",
+        language === "es" ? "Integridad referencial" : "Referential Integrity",
+        language === "es" ? "Optimización de consultas" : "Query Optimization",
+        "OpenAPI",
+        "Git / GitHub",
+        "npm",
+        "NuGet",
+        ".NET CLI",
+        "EF Core Tools",
+        "IIS Server",
+        "ASP.NET Core Module",
+        "dotnet publish",
+        "Web.config",
+        "Hosting In-Process",
+        language === "es" ? "Configuración por ambientes" : "Environment Configuration",
+        language === "es" ? "Arquitectura de software" : "Software Architecture",
+        language === "es" ? "Patrones de diseño" : "Design Patterns",
+        "Refactoring",
+        language === "es" ? "Resolución de problemas" : "Problem Solving",
+        language === "es" ? "Programación orientada a objetos" : "Object-Oriented Programming",
+        language === "es" ? "Arquitectura por capas" : "Layered Architecture",
+        language === "es" ? "Patrón DTO" : "DTO Pattern",
+        language === "es" ? "Modelado relacional" : "Relational Modeling",
+        "Amazon S3",
+        language === "es" ? "Almacenamiento local" : "Local File Storage",
+        "ImageMagick",
+        "MailKit",
+        "Twilio",
       ],
-      features: t.ansenuzaFeatures,
+      features: t.mpmFeatures,
+      github: "https://github.com/Nikimedinagit/ConcesionariaDDD",
+      link: null,
+      isDevelopment: true,
+      icon: Construction,
+    },
+    {
+      title: t.sueldosTitle,
+      subtitle: t.sueldosSubtitle,
+      description: t.sueldosDesc,
+      longDescription: t.sueldosLong,
+      stack: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "React Router",
+        "Vite",
+        "Tailwind CSS",
+        "Shadcn/UI",
+        "jsPDF",
+        "Responsive Design",
+        "C#",
+        "MVC",
+        ".NET 8",
+        "Identity JWT",
+        "Authentication & Authorization",
+        "Logging",
+        "Clean Architecture",
+        "ASP.NET Web",
+        "REST APIs",
+        "Entity Framework Core",
+        "Dependency Injection",
+        "SOLID",
+        "CORS",
+        "LINQ",
+        "SQL Server",
+        "T-SQL",
+        language === "es" ? "Consultas SQL" : "SQL Queries",
+        language === "es" ? "Modelado de datos" : "Data Modeling",
+        language === "es" ? "Normalización" : "Normalization",
+        language === "es" ? "Índices" : "Indexes",
+        language === "es" ? "Transacciones" : "Transactions",
+        "Visual Studio",
+        "VS Code",
+        "Swagger",
+        "OpenAPI",
+        "Git / GitHub",
+        "npm",
+        "NuGet",
+        "IIS Server",
+        "SSL/TLS",
+        language === "es" ? "Arquitectura de software" : "Software Architecture",
+        language === "es" ? "Patrones de diseño" : "Design Patterns",
+        "Refactoring",
+        language === "es" ? "Resolución de problemas" : "Problem Solving",
+        language === "es" ? "Trabajo en equipo" : "Teamwork",
+      ],
+      features: t.sueldosFeatures,
       github: null,
       isPrivate: true,
-      link: "https://desafiosansenuza.com",
+      link: "https://loguisueldos.com/",
       icon: Server,
     },
     {
@@ -204,29 +408,148 @@ const Projects = () => {
       description: t.workSyncDesc,
       longDescription: t.workSyncLong,
       stack: [
-        ".NET 8",
-        "SQL Server",
-        "Identity JWT",
-        "MVC",
-        "C#",
-        "ASP.NET Web",
-        language === "es" ? "Modelado de datos" : "Data Modeling",
-        "Swagger",
-        "IIS Server",
-        "Git / GitHub",
-        "Postman",
-        "Monster ASP.NET",
-        "Bootstrap",
-        "JavaScript",
-        "Chart.js",
-        "jsPDF",
         "HTML",
         "CSS",
+        "JavaScript",
+        "Bootstrap",
+        "Tailwind CSS",
+        "Responsive Design",
+        "jQuery",
+        "Fetch API",
+        "Chart.js",
+        "SweetAlert2",
+        "Select2",
+        "jsPDF",
+        "SheetJS",
+        "ExcelJS",
+        "Face-api.js",
+        "Web Camera API",
+        "C#",
+        ".NET 8",
+        "ASP.NET Web",
+        "REST APIs",
+        "Entity Framework Core",
+        "LINQ",
+        "Identity JWT",
+        "Authentication & Authorization",
+        "Refresh Tokens",
+        "Dependency Injection",
+        "Background Services",
+        "File Handling",
+        "CORS",
+        language === "es" ? "Arquitectura multiempresa" : "Multi-tenant Architecture",
+        "SQL Server",
+        "Code First",
+        language === "es" ? "Migraciones" : "Migrations",
+        language === "es" ? "Modelado de datos" : "Data Modeling",
+        language === "es" ? "Índices" : "Indexes",
+        language === "es" ? "Transacciones" : "Transactions",
+        language === "es" ? "Relaciones y claves foráneas" : "Relationships & Foreign Keys",
+        language === "es" ? "Integridad referencial" : "Referential Integrity",
+        language === "es" ? "Seed de datos" : "Data Seeding",
+        language === "es" ? "Optimización de consultas" : "Query Optimization",
+        "Visual Studio",
+        "Git / GitHub",
+        "Swagger",
+        "OpenAPI",
+        "NuGet",
+        ".NET CLI",
+        "EF Core Tools",
+        "IIS Server",
+        "ASP.NET Core Module",
+        "dotnet publish",
+        "Web.config",
+        "Hosting In-Process",
+        "SSL/TLS",
+        language === "es" ? "Configuración por ambientes" : "Environment Configuration",
+        language === "es" ? "Programación orientada a objetos" : "Object-Oriented Programming",
+        language === "es" ? "Arquitectura por capas" : "Layered Architecture",
+        language === "es" ? "Patrón DTO" : "DTO Pattern",
+        "SOLID",
+        language === "es" ? "Manejo de excepciones" : "Exception Handling",
+        "Refactoring",
+        language === "es" ? "Resolución de problemas" : "Problem Solving",
+        language === "es" ? "Modelado relacional" : "Relational Modeling",
+        language === "es" ? "Trabajo en equipo" : "Teamwork",
+        "Code Review",
       ],
       features: t.features,
       github: null,
       isPrivate: true,
-      link: "http://gestionworksync.runasp.net",
+      link: "https://loguirrhh.com/",
+      icon: Server,
+    },
+    {
+      title: t.ansenuzaTitle,
+      subtitle: t.ansenuzaSubtitle,
+      description: t.ansenuzaDesc,
+      longDescription: t.ansenuzaLong,
+      stack: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "React Router",
+        "Vite",
+        "Tailwind CSS",
+        "Shadcn/UI",
+        "Responsive Design",
+        "Axios",
+        "C#",
+        "MVC",
+        "DDD",
+        ".NET 10",
+        "Identity JWT",
+        "Authentication & Authorization",
+        "Clean Architecture",
+        "Fluent Validation",
+        "ASP.NET Web",
+        "REST APIs",
+        "Entity Framework Core",
+        "Dependency Injection",
+        "SOLID",
+        "CORS",
+        "LINQ",
+        "File Handling",
+        "MediatR",
+        language === "es" ? "Arquitectura multiempresa" : "Multi-tenant Architecture",
+        "SQL Server",
+        language === "es" ? "Modelado de datos" : "Data Modeling",
+        language === "es" ? "Normalización" : "Normalization",
+        language === "es" ? "Índices" : "Indexes",
+        language === "es" ? "Transacciones" : "Transactions",
+        "Code First",
+        language === "es" ? "Migraciones" : "Migrations",
+        language === "es" ? "Relaciones y claves foráneas" : "Relationships & Foreign Keys",
+        language === "es" ? "Integridad referencial" : "Referential Integrity",
+        language === "es" ? "Seed de datos" : "Data Seeding",
+        language === "es" ? "Optimización de consultas" : "Query Optimization",
+        "VS Code",
+        "OpenAPI",
+        "Git / GitHub",
+        "npm",
+        "NuGet",
+        ".NET CLI",
+        "EF Core Tools",
+        "IIS Server",
+        "ASP.NET Core Module",
+        "dotnet publish",
+        "Web.config",
+        "Hosting In-Process",
+        language === "es" ? "Configuración por ambientes" : "Environment Configuration",
+        "SSL/TLS",
+        language === "es" ? "Arquitectura de software" : "Software Architecture",
+        language === "es" ? "Patrones de diseño" : "Design Patterns",
+        language === "es" ? "Programación orientada a objetos" : "Object-Oriented Programming",
+        language === "es" ? "Arquitectura por capas" : "Layered Architecture",
+        language === "es" ? "Patrón DTO" : "DTO Pattern",
+        language === "es" ? "Manejo de excepciones" : "Exception Handling",
+        language === "es" ? "Modelado relacional" : "Relational Modeling",
+      ],
+      features: t.ansenuzaFeatures,
+      github: null,
+      isPrivate: true,
+      link: "https://desafiosansenuza.com",
       icon: Server,
     },
     {
@@ -235,20 +558,64 @@ const Projects = () => {
       description: t.ticketsDesc,
       longDescription: t.ticketsLong,
       stack: [
+        "HTML",
+        "CSS",
+        "JavaScript",
         "React",
+        "React Router",
         "Vite",
-        "Shadcn/UI",
         "Tailwind CSS",
-        ".NET 8",
-        "C#",
-        "ASP.NET Web",
-        "SQL Server",
-        "Identity JWT",
+        "Shadcn/UI",
         "Chart.js",
         "jsPDF",
+        "Responsive Design",
+        "Axios",
+        "C#",
+        "MVC",
+        ".NET 8",
+        "Identity JWT",
+        "Authentication & Authorization",
+        "ASP.NET Web",
+        "REST APIs",
+        "Entity Framework Core",
+        "Dependency Injection",
+        "CORS",
+        "LINQ",
+        "SOLID",
+        language === "es" ? "Manejo de excepciones" : "Exception Handling",
+        "SQL Server",
+        language === "es" ? "Modelado de datos" : "Data Modeling",
+        language === "es" ? "Consultas SQL" : "SQL Queries",
+        language === "es" ? "Normalización" : "Normalization",
+        language === "es" ? "Índices" : "Indexes",
+        "Code First",
+        language === "es" ? "Migraciones" : "Migrations",
+        language === "es" ? "Relaciones y claves foráneas" : "Relationships & Foreign Keys",
+        language === "es" ? "Integridad referencial" : "Referential Integrity",
+        language === "es" ? "Optimización de consultas" : "Query Optimization",
+        "Swagger",
+        "OpenAPI",
         "Git / GitHub",
-        "Postman",
+        "npm",
+        "NuGet",
+        ".NET CLI",
+        "EF Core Tools",
+        "IIS Server",
+        "ASP.NET Core Module",
+        "dotnet publish",
+        "Web.config",
+        "Hosting In-Process",
+        language === "es" ? "Configuración por ambientes" : "Environment Configuration",
         "Monster ASP.NET",
+        "SSL/TLS",
+        language === "es" ? "Arquitectura de software" : "Software Architecture",
+        language === "es" ? "Patrones de diseño" : "Design Patterns",
+        "Refactoring",
+        language === "es" ? "Resolución de problemas" : "Problem Solving",
+        language === "es" ? "Programación orientada a objetos" : "Object-Oriented Programming",
+        language === "es" ? "Arquitectura por capas" : "Layered Architecture",
+        language === "es" ? "Patrón DTO" : "DTO Pattern",
+        language === "es" ? "Modelado relacional" : "Relational Modeling",
       ],
       features: t.ticketsFeatures,
       github: "https://github.com/Nikimedinagit/GestionDeTickets", 
@@ -259,7 +626,7 @@ const Projects = () => {
 
   const frontendProjects = [
     {
-      title: "WorkSync",
+      title: "LoguiRRHH",
       subtitle: language === "es" ? "Gestión RRHH" : "HR Management",
       description:
         language === "es"
@@ -267,7 +634,7 @@ const Projects = () => {
           : "Platform to optimize human talent management.",
       stack: ["React", "Shadcn/UI", "Tailwind CSS"],
       github: "https://github.com/Nikimedinagit/rrhh-landing",
-      link: "https://gestionworksync.netlify.app/",
+      link: "https://loguirrhh.com/",
     },
     {
       title: "Logui Soft",
@@ -335,7 +702,14 @@ const Projects = () => {
               <project.icon size={22} strokeWidth={2.2} />
             </div>
             <div>
-              <p className="mb-1 text-xs font-bold text-blue-600">{project.subtitle}</p>
+              <div className="mb-1 flex flex-wrap items-center gap-2">
+                <p className="text-xs font-bold text-blue-600">{project.subtitle}</p>
+                {project.isDevelopment && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-[10px] font-black text-amber-700 dark:bg-amber-950/30 dark:text-amber-400">
+                    <Construction size={11} /> {t.enDesarrollo}
+                  </span>
+                )}
+              </div>
               <h4 className="text-xl font-black leading-tight tracking-tight text-foreground transition-colors group-hover:text-blue-600 sm:text-2xl">
                 {project.title}
               </h4>
@@ -383,17 +757,23 @@ const Projects = () => {
         </div>
 
         <div className="mt-auto flex flex-wrap items-center gap-3 border-t border-slate-100 pt-5 dark:border-white/10">
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-9 items-center gap-2 rounded-md bg-blue-600 px-3.5 text-sm font-bold text-white transition-colors hover:bg-blue-700"
-          >
-            {t.verProyecto}
-            <span className="flex h-6 w-6 items-center justify-center rounded-md bg-white/15">
-              <ExternalLink size={14} />
+          {project.link ? (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-9 items-center gap-2 rounded-md bg-blue-600 px-3.5 text-sm font-bold text-white transition-colors hover:bg-blue-700"
+            >
+              {t.verProyecto}
+              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-white/15">
+                <ExternalLink size={14} />
+              </span>
+            </a>
+          ) : (
+            <span className="inline-flex h-9 items-center gap-2 rounded-md border border-amber-200 bg-amber-50 px-3.5 text-sm font-bold text-amber-700 dark:border-amber-900/50 dark:bg-amber-950/20 dark:text-amber-400">
+              <Construction size={15} /> {t.enDesarrollo}
             </span>
-          </a>
+          )}
           <button
             onClick={() => setSelectedProject(project)}
             className="inline-flex h-9 cursor-pointer items-center gap-2 rounded-md px-3 text-sm font-bold text-muted-foreground transition-colors hover:bg-slate-100 hover:text-blue-600 dark:hover:bg-white/5"
@@ -518,15 +898,17 @@ const Projects = () => {
                     <Lock size={13} /> {t.repositorioPrivado}
                   </span>
                 )}
-                <a
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-blue-600"
-                  aria-label={`${t.verProyecto}: ${selectedProject.title}`}
-                >
-                  <ExternalLink size={17} />
-                </a>
+                {selectedProject.link && (
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-blue-600"
+                    aria-label={`${t.verProyecto}: ${selectedProject.title}`}
+                  >
+                    <ExternalLink size={17} />
+                  </a>
+                )}
                 <span className="mx-1 h-5 w-px bg-border" aria-hidden="true" />
                 <button
                   type="button"
@@ -562,7 +944,7 @@ const Projects = () => {
                 </section>
               </div>
 
-              <section>
+              {selectedProject.features.length > 0 && <section>
                 <h3 className="mb-3 text-xs font-black uppercase tracking-[0.16em] text-blue-600">
                   {t.ecosistemaModulos}
                 </h3>
@@ -579,7 +961,7 @@ const Projects = () => {
                     </li>
                   ))}
                 </ul>
-              </section>
+              </section>}
             </div>
           </div>
         </div>
