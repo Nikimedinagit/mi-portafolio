@@ -624,9 +624,34 @@ const Projects = () => {
     },
   ];
 
+  const frontendProjectStack = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "Shadcn/UI",
+    "Radix UI",
+    "Responsive Design",
+    "Context API",
+    "Fetch API",
+    language === "es" ? "Validación de formularios" : "Form Validation",
+    language === "es" ? "Temas visuales" : "Visual Themes",
+    "ESLint",
+    "npm",
+    "Git / GitHub",
+  ];
+
+  const loguiSoftFrontendStack = frontendProjectStack.filter(
+    (technology) =>
+      technology !== "Fetch API" &&
+      technology !== (language === "es" ? "Validación de formularios" : "Form Validation"),
+  );
+
   const frontendProjects = [
     {
-      title: "LoguiRRHH",
+      title: "WorkSync",
       subtitle: language === "es" ? "Gestión RRHH" : "HR Management",
       description:
         language === "es"
@@ -634,7 +659,7 @@ const Projects = () => {
           : "Platform to optimize human talent management.",
       stack: ["React", "Shadcn/UI", "Tailwind CSS"],
       github: "https://github.com/Nikimedinagit/rrhh-landing",
-      link: "https://loguirrhh.com/",
+      link: "https://gestionworksync.netlify.app/",
     },
     {
       title: "Logui Soft",
@@ -643,7 +668,7 @@ const Projects = () => {
         language === "es"
           ? "Sitio corporativo para venta de servicios de desarrollo."
           : "Corporate site for selling development services.",
-      stack: ["React", "Shadcn/UI", "Tailwind CSS"],
+      stack: loguiSoftFrontendStack,
       github: "https://github.com/Nikimedinagit/logui-landing",
       link: "https://loguisoft.netlify.app/",
     },
@@ -654,7 +679,7 @@ const Projects = () => {
         language === "es"
           ? "Interfaz premium enfocada en la reserva de servicios."
           : "Premium interface focused on service reservations.",
-      stack: ["React", "Shadcn/UI", "Tailwind CSS"],
+      stack: frontendProjectStack,
       github: "https://github.com/Nikimedinagit/hotel-cons-landing",
       link: "https://hotelconstantino.netlify.app/",
     },
@@ -665,9 +690,9 @@ const Projects = () => {
         language === "es"
           ? "Mi carta de presentación: performance y diseño."
           : "My presentation card: performance and design.",
-      stack: ["React", "Shadcn/UI", "Tailwind CSS"],
+      stack: frontendProjectStack,
       github: "https://github.com/Nikimedinagit/mi-portafolio",
-      link: "https://ignaciodev.netlify.app/",
+      link: "https://ignacioemedina.com.ar/",
     },
   ];
 
